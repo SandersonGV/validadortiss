@@ -71,7 +71,8 @@ class xmlValidador{
         foreach ($this->errors as $key => $value) {
             $newerror['Errors'][] = [ 
                 'linha'=>$value->line,
-                'msg'=> preg_replace('/({[^\\\\]+?})/', '', $value->message)
+                'msg'=>  $value->message
+                //'msg'=> preg_replace('/({[^\\\\]+?})/', '', $value->message)
                 
             ];
         }
