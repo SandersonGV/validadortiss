@@ -85,14 +85,17 @@ $('form').submit(function(event){
         alertaMsg.innerHTML = '';
         hashMsg.innerHTML = '';
         alerta.hidden = false;
-        hash.hidden = false;
         file.value = "";
 
-            
-            hash.setAttribute("class",'alert alert-'+(data.hash.status==true?'success':'warning'))
-            let p = document.createElement('p');
-            p.innerText = (data.hash.status==true?"Hash válido: ":'Hash inválido: ')+data.hash.value
-            hashMsg.appendChild(p);
+            if(data.hash){
+                console.log(data);
+                hash.setAttribute("class",'alert alert-'+(data.hash.status==true?'success':'warning'))
+                let p = document.createElement('p');
+                p.innerText = (data.hash.status==true?"Hash válido: ":'Hash inválido: ')+data.hash.value
+                hashMsg.appendChild(p);
+                hash.hidden = false;
+
+            }
 
 
             if(data.status=="0"){
