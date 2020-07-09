@@ -365,7 +365,7 @@
 			<element name="indicacaoAcidente" type="ans:dm_indicadorAcidente"/>
 			<element name="dadosAtendimento" type="ans:ctm_consultaAtendimento"/>
 			<element name="observacao" type="ans:st_texto500" minOccurs="0"/>
-			<element name="assinaturaDigitalGuia" type="ans:assinaturaDigital" minOccurs="0"/>
+			<element name="assinaturaDigitalGuia" type="ans:Signature" minOccurs="0"/>
 		</sequence>
 	</complexType>
 	<!--=============================  DEMONSTRATIVO DE ANALISE DE CONTA ===========================-->
@@ -572,7 +572,7 @@
 			<element name="observacao" type="ans:st_texto500" minOccurs="0"/>
 			<element name="valorTotalHonorarios" type="ans:st_decimal10-2"/>
 			<element name="dataEmissaoGuia" type="ans:st_data"/>
-			<element name="assinaturaDigitalGuia" type="ans:assinaturaDigital" minOccurs="0"/>
+			<element name="assinaturaDigitalGuia" type="ans:Signature" minOccurs="0"/>
 		</sequence>
 	</complexType>
 	<!-- Fim de honorario individual -->
@@ -640,7 +640,7 @@
 			<element name="outrasDespesas" type="ans:ct_outrasDespesas" minOccurs="0"/>
 			<element name="observacao" type="ans:st_texto500" minOccurs="0"/>
 			<!--	<element name="relatorioTecnico" type="base64Binary" minOccurs="0"/>-->
-			<element name="assinaturaDigitalGuia" type="ans:assinaturaDigital" minOccurs="0"/>
+			<element name="assinaturaDigitalGuia" type="ans:Signature" minOccurs="0"/>
 		</sequence>
 	</complexType>
 	<!--============================= GUIA DE SOLICITACAO DE INTERNACAO ===========================-->
@@ -829,7 +829,7 @@
 			<element name="observacao" type="ans:st_texto500" minOccurs="0"/>
 			<element name="valorTotal" type="ans:ct_guiaValorTotal"/>
 			<!--<element name="relatorioTecnico" type="base64Binary" minOccurs="0"/>-->
-			<element name="assinaturaDigitalGuia" type="ans:assinaturaDigital" minOccurs="0"/>
+			<element name="assinaturaDigitalGuia" type="ans:Signature" minOccurs="0"/>
 		</sequence>
 	</complexType>
 	<!--============================= GUIA DE SOLICITACAO DE SP E SADT ===========================-->
@@ -1255,7 +1255,7 @@
 			<element name="valorTotalFranquia" type="ans:st_decimal10-2" minOccurs="0"/>
 			<element name="observacao" type="ans:st_texto500" minOccurs="0"/>
 			<element name="odontoInicial" type="ans:cto_anexoSituacaoInicialnaGTO" minOccurs="0"/>
-			<element name="assinaturaDigitalGuia" type="ans:assinaturaDigital" minOccurs="0"/>
+			<element name="assinaturaDigitalGuia" type="ans:Signature" minOccurs="0"/>
 		</sequence>
 	</complexType>
 	<!--============== GUIA DE TRATAMENTO ODONTOLOGICO - SOLICITAÇÃO===========-->

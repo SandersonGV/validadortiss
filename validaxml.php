@@ -44,18 +44,18 @@ class xmlValidador{
         }
         libxml_clear_errors();
 
-        if( $valid_xml ){
             $hashnode = $xml_doc->getElementsByTagName('hash');
-            $hash = $hashnode->item(0)->nodeValue;
-            $hashnode->item(0)->nodeValue = "";
+            if($hashnode->length>0){
+                $hash = $hashnode->item(0)->nodeValue;
+                $hashnode->item(0)->nodeValue = "";
 
-            $content =$xml_doc->saveXML(); 
-            $text = preg_replace('/[\t\n]/',"",$content);        
-            $text = preg_replace('/\>\s+\</',"",$text);
-            $text = preg_replace('/<[^>]+>/',"",$text);
-            $newHash = md5($text);
-            $this->hash['status'] = $newHash == $hash;
-            $this->hash['value'] = $hash;
+                $content =$xml_doc->saveXML(); 
+                $text = preg_replace('/[\t\n]/',"",$content);        
+                $text = preg_replace('/\>\s+\</',"",$text);
+                $text = preg_replace('/<[^>]+>/',"",$text);
+                $newHash = md5($text);
+                $this->hash['status'] = $newHash == $hash;
+                $this->hash['value'] = $hash;
 
         }
         return $valid_xml;
@@ -72,7 +72,8 @@ class xmlValidador{
         foreach ($this->errors as $key => $value) {
             $newerror['Errors'][] = [ 
                 'linha'=>$value->line,
-                'msg'=>  $value->message
+                'msg'=>  $value->message,
+                'errocompleto'=> $value
                 //'msg'=> preg_replace('/({[^\\\\]+?})/', '', $value->message)
                 
             ];
